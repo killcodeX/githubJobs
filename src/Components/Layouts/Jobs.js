@@ -1,11 +1,15 @@
 import React from 'react';
-import fetchJobApi from './fetchJobApi';
+// import fetchJobApi from './fetchJobApi';
+import { Row, Divider, Col, Layout } from "antd";
 
 export default function Jobs() {
 
-    const {jobs, loading, error } = fetchJobApi();
 
     return (
-        <h1>hi</h1>
+        <Layout.Content style={{ padding: '0 50px' }}>
+        <Row>
+            <Col>hi</Col>
+        </Row>
+        </Layout.Content>
     )
 }
