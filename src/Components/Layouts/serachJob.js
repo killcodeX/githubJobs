@@ -1,30 +1,87 @@
-import React from "react";
-import { Form, Input, Button, Checkbox } from "antd";
-import { SearchOutlined} from "@ant-design/icons";
+import React, { useState } from "react";
+import { Form, Input, Button, Checkbox, Row, Col } from "antd";
+import { SearchOutlined, InsertRowBelowOutlined } from "@ant-design/icons";
 
 export default function SerachJob() {
+  const [desc, setDesc] = useState("");
+  const [location, setlocation] = useState("");
+  const [fulltime, setfulltime] = useState(false);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log("desc", desc);
+    console.log("fulltime", fulltime);
+    console.log("location", location);
+  };
+
   return (
     <Form
       name="normal_login"
       className="search-form"
       initialValues={{ remember: true }}
-    //   layout='inline'
-    //   onFinish={onFinish}
+      //   layout='inline'
+     onSubmitCapture={handleSubmit}
     >
-      <Form.Item
-        name="username"
-        rules={[{ required: true, message: "Please input your designation!" }]}
-      >
-        <Input
-          prefix={<SearchOutlined className="site-form-item-icon" />}
-          placeholder="Search Job"
-        />
-      </Form.Item>
-      {/* <Form.Item>
-        <Form.Item name="remember" valuePropName="checked" noStyle>
-          <Checkbox>Remember me</Checkbox>
-        </Form.Item>
-      </Form.Item> */}
+      <Row>
+        <Col span={16}>
+          <Form.Item
+            name="description"
+            rules={[
+              { required: true, message: "Please input your Job description!" },
+            ]}
+          >
+            <Input
+              name={desc}
+              prefix={<SearchOutlined className="site-form-item-icon" />}
+              placeholder="Job Description"
+              onChange={(e) => setDesc(e.target.value)}
+            />
+          </Form.Item>
+        </Col>
+      </Row>
+      <Row>
+        <Col span={10}>
+          <Form.Item
+            name="location"
+            rules={[{ required: true, message: "Please input your Location!" }]}
+          >
+            <Input
+              name={location}
+              prefix={
+                <InsertRowBelowOutlined className="site-form-item-icon" />
+              }
+              placeholder="Location"
+              onChange={(e) => setlocation(e.target.value)}
+            />
+          </Form.Item>
+        </Col>
+        <Col offset={2}>
+          <Form.Item>
+            <Form.Item
+              name="checkbox"
+              valuePropName="checked"
+              checked={fulltime} 
+              noStyle
+            >
+              <Checkbox onChange={e => setfulltime(!fulltime)} >Full Time</Checkbox>
+            </Form.Item>
+          </Form.Item>
+        </Col>
+      </Row>
+      <Row>
+        <Col span={24}>
+          <Form.Item>
+            <Button
+              type="primary"
+              htmlType="submit"
+              className="search-form-button"
+              size='large'
+            >
+              Search Job
+            </Button>
+          </Form.Item>
+        </Col>
+      </Row>
     </Form>
   );
 }

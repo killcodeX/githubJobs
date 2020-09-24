@@ -25,7 +25,7 @@ function App() {
           </Col>
         </Row>
         <Row>
-          <Col span={6} offset={9}>
+          <Col span={12} offset={8}>
             <JobSearch />
           </Col>
         </Row>
@@ -38,7 +38,7 @@ function App() {
       </Layout>
       <Layout>
         <Footer style={{ textAlign: "center", zIndex: "1" }}>
-          Ant Design ©2018 Created by Ant UED
+          GitHub Job Project ©2018 Created by <a href='https://aaquib.netlify.app' target="_blank" rel="noopener noreferrer">Aaquib Ahmed</a>
         </Footer>
       </Layout>
     </>
