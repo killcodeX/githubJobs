@@ -51,3 +51,16 @@ background: url(https://gw.alipayobjects.com/zos/basement_prod/a8cf2dfe-ff6a-4a2
   border-radius: 20px !important;
 }
 
+/* ------------------------------------------- Job Card ------------------------------------------------ */
+
+.jobCards{
+  cursor: pointer;
+  box-shadow: 0 4px 32px 0 rgba(10, 14, 29, 0.02), 0 8px 64px 0 rgba(10,14,29,0.08);
+  transform: translate3d(0, 0px, 0);
+  transition: 700ms ease-in-out;
+}
+
+.jobCards:hover {
+  transform: translate3d(0, -8px, 0);
+  box-shadow: 0 16px 40px 0 rgba(10, 14, 29, 0.04), 0 16px 80px 0 rgba(10,14,29,0.16);
+}

@@ -2,9 +2,12 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
+import { StateManager } from './Components/Context/stateManager';
 
 ReactDOM.render(
-    <App />,
+  <StateManager>
+    <App />
+  </StateManager>,
   document.getElementById('root')
 );
 

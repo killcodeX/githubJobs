@@ -4,11 +4,6 @@ import "antd/dist/antd.css";
 import JobSearch from "./Components/Layouts/serachJob";
 import JobResults from "./Components/Layouts/Jobs";
 import { Layout, Row, Col, Divider } from "antd";
-import {
-  UploadOutlined,
-  UserOutlined,
-  VideoCameraOutlined,
-} from "@ant-design/icons";
 
 const { Footer } = Layout;
 

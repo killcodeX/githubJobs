@@ -1,17 +1,34 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
+import { MyContext } from '../Context/stateManager';
 import { Form, Input, Button, Checkbox, Row, Col } from "antd";
 import { SearchOutlined, InsertRowBelowOutlined } from "@ant-design/icons";
 
+
 export default function SerachJob() {
+
+  const {  getParams } = useContext(MyContext);
+
   const [desc, setDesc] = useState("");
   const [location, setlocation] = useState("");
   const [fulltime, setfulltime] = useState(false);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("desc", desc);
-    console.log("fulltime", fulltime);
-    console.log("location", location);
+    console.log("desc --->", desc);
+    console.log("fulltime --->", fulltime);
+    console.log("location --->", location);
+
+    let params = {
+      description: desc,
+      location : location,
+      full_time: fulltime
+    }
+
+    getParams(params)
+
+    setfulltime(false)
+    setlocation('')
+    setDesc('')
   };
 
   return (
@@ -69,13 +86,14 @@ export default function SerachJob() {
         </Col>
       </Row>
       <Row>
-        <Col span={24}>
+        <Col span={12}>
           <Form.Item>
             <Button
               type="primary"
               htmlType="submit"
               className="search-form-button"
               size='large'
+              style={{width:'133%'}}
             >
               Search Job
             </Button>

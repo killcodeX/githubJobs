@@ -1,4 +1,18 @@
-export default fetchJobApi = (params, page) => {
-    
+import axios from 'axios';
+
+const base_url = 'https://cors-anywhere.herokuapp.com/https://jobs.github.com/positions.json';
+
+export const fetchJobApi = async (params, page) => {
+    try {
+        const request = await axios.get(base_url, {params: { markdown: true, page : page, ...params}});
+        const { data: response } = request;
+        return response
+        
+      } catch (error) {
+        console.log(error);
+        return false;
+      }
 
 }
+
+// message: 'Having issue communicating with the server.'
