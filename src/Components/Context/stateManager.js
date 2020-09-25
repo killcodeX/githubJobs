@@ -6,7 +6,7 @@ const initialState = {
     jobs : [],
     params:{},
     page: 1,
-    loading : false,
+    loading : true,
     error : false
 }
 
@@ -37,10 +37,17 @@ export const StateManager  = ({children}) => {
 
         const jobApi = async () => {
             let jobData = await fetchJobApi(state.params, state.page)
+            if (jobData){
             dispatch({
                 type: 'GET_DATA',
                 payload: jobData
             });
+            } else {
+                dispatch({
+                    type: 'GET_ERROR',
+                    payload: true
+                });
+            }
         }
 
         jobApi()
@@ -49,8 +56,7 @@ export const StateManager  = ({children}) => {
 
     return(
         <MyContext.Provider value={{
-            jobs:state.jobs,
-            error:state.error,
+            state:state,
             getParams,
             getPage
         }}>

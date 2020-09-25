@@ -33,7 +33,7 @@ function App() {
       </Layout>
       <Layout>
         <Footer style={{ textAlign: "center", zIndex: "1" }}>
-          GitHub Job Project ©2018 Created by <a href='https://aaquib.netlify.app' target="_blank" rel="noopener noreferrer">Aaquib Ahmed</a>
+          GitHub Job Project ©2020 Created by <a href='https://aaquib.netlify.app' target="_blank" rel="noopener noreferrer">Aaquib Ahmed</a>
         </Footer>
       </Layout>
     </>

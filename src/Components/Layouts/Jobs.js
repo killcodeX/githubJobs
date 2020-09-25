@@ -11,18 +11,40 @@ const openNotificationWithIcon = (type) => {
 };
 
 export default function Jobs() {
-  const { jobs } = useContext(MyContext);
+  const { state } = useContext(MyContext);
+
+  const { jobs, loading, error } = state; 
+
+  // let jobb = jobs.map((job) => <JobListing key={job.id} job={job} />
+
+  // let spin = <Spin style={{ display: "block", margin: "0 auto" }} size="large" />
+
+  // let errors = (openNotificationWithIcon('error')),
+  // Spin style={{ display: "block", margin: "0 auto" }} size="large" />
+
+  function rendering () {
+    if(loading == false && error == false)
+      return jobs.map((job) => <JobListing key={job.id} job={job} />)
+    if(loading == true && error == false)
+      return <Spin style={{ display: "block", margin: "0 auto" }} size="large" />
+    if(loading == true && error == true)
+      return (openNotificationWithIcon('error')), <Spin style={{ display: "block", margin: "0 auto" }} size="large" />
+  }
 
   return (
     <Layout.Content style={{ padding: "0 50px" }}>
       <Row>
-        {jobs ? (
-          jobs.map((job) => <JobListing key={job.id} job={job} />)
-        ) : (
-          (openNotificationWithIcon('error')),
-          <Spin style={{ display: "block", margin: "0 auto" }} size="large" />
-        )}
+        {rendering()}
       </Row>
     </Layout.Content>
   );
 }
+
+// <Spin style={{ display: "block", margin: "0 auto" }} size="large" />)
+// jobs.map((job) => <JobListing key={job.id} job={job} />
+// (openNotificationWithIcon('error')),
+
+
+//  <Spin style={{ display: "block", margin: "0 auto" }} size="large" />
+// ) : ((openNotificationWithIcon('error')),
+// Spin style={{ display: "block", margin: "0 auto" }} size="large" />
