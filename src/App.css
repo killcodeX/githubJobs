@@ -44,11 +44,21 @@ background: url(https://gw.alipayobjects.com/zos/basement_prod/a8cf2dfe-ff6a-4a2
 }
 
 
+.alignCenter{
+  display: block;
+  margin: 0 auto;
+}
+
+
 /* ------------------------------------------- Search Form ------------------------------------------------ */
 
 .search-form input{
   height: 30px;
   border-radius: 20px !important;
+}
+
+button.ant-btn.ant-btn-primary.ant-btn-lg.search-form-button {
+  width:100%;
 }
 
 /* ------------------------------------------- Job Card ------------------------------------------------ */
@@ -63,4 +73,28 @@ background: url(https://gw.alipayobjects.com/zos/basement_prod/a8cf2dfe-ff6a-4a2
 .jobCards:hover {
   transform: translate3d(0, -8px, 0);
   box-shadow: 0 16px 40px 0 rgba(10, 14, 29, 0.04), 0 16px 80px 0 rgba(10,14,29,0.16);
+}
+
+.card-header {
+  display:flex;
+  justify-content:space-between;
+}
+
+
+
+/* ----------------------------------------- Responsive --------------------------------------------------- */
+
+@media(max-width:480px){
+  .title{
+    font-size: 40px;
+  }
+
+  button.ant-btn.ant-btn-primary.ant-btn-lg.search-form-button {
+    width:100%;
+  }
+
+  .header-right{
+    display:none;
+  }
+
 }

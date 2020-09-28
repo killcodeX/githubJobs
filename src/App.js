@@ -19,11 +19,9 @@ function App() {
             <h1 className="title">GitHub Jobs</h1>
           </Col>
         </Row>
-        <Row>
-          <Col span={12} offset={8}>
+        {/* <Row justify="center"> */}
             <JobSearch />
-          </Col>
-        </Row>
+        {/* </Row> */}
         <Row>
           <Col span={12} offset={6}>
             <Divider/>

@@ -39,8 +39,8 @@ export default function SerachJob() {
       //   layout='inline'
      onSubmitCapture={handleSubmit}
     >
-      <Row>
-        <Col span={16}>
+      <Row justify="center">
+        <Col xs={14} md={10}>
           <Form.Item
             name="description"
             rules={[
@@ -56,8 +56,8 @@ export default function SerachJob() {
           </Form.Item>
         </Col>
       </Row>
-      <Row>
-        <Col span={10}>
+      <Row justify="center">
+        <Col xs={8} md={7}>
           <Form.Item
             name="location"
             rules={[{ required: true, message: "Please input your Location!" }]}
@@ -72,7 +72,7 @@ export default function SerachJob() {
             />
           </Form.Item>
         </Col>
-        <Col offset={2}>
+        <Col md={2} offset={1}>
           <Form.Item>
             <Form.Item
               name="checkbox"
@@ -85,15 +85,14 @@ export default function SerachJob() {
           </Form.Item>
         </Col>
       </Row>
-      <Row>
-        <Col span={12}>
+      <Row justify="center">
+        <Col xs={14} md={10}>
           <Form.Item>
             <Button
               type="primary"
               htmlType="submit"
               className="search-form-button"
               size='large'
-              style={{width:'133%'}}
             >
               Search Job
             </Button>

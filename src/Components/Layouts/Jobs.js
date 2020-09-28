@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import { MyContext } from "../Context/stateManager";
 import { Row, Spin, Layout, notification } from "antd";
 import JobListing from "./jobListing";
+import JobPagination from './jobPaginations';
 
 const openNotificationWithIcon = (type) => {
   notification[type]({
@@ -11,16 +12,10 @@ const openNotificationWithIcon = (type) => {
 };
 
 export default function Jobs() {
+
   const { state } = useContext(MyContext);
 
-  const { jobs, loading, error } = state; 
-
-  // let jobb = jobs.map((job) => <JobListing key={job.id} job={job} />
-
-  // let spin = <Spin style={{ display: "block", margin: "0 auto" }} size="large" />
-
-  // let errors = (openNotificationWithIcon('error')),
-  // Spin style={{ display: "block", margin: "0 auto" }} size="large" />
+  const { jobs, loading, error, page } = state; 
 
   function rendering () {
     if(loading == false && error == false)
@@ -33,18 +28,10 @@ export default function Jobs() {
 
   return (
     <Layout.Content style={{ padding: "0 50px" }}>
-      <Row>
+      <Row justify="center">
         {rendering()}
       </Row>
+      <JobPagination style={{marginBottom:'30px'}} />
     </Layout.Content>
   );
 }
-
-// <Spin style={{ display: "block", margin: "0 auto" }} size="large" />)
-// jobs.map((job) => <JobListing key={job.id} job={job} />
-// (openNotificationWithIcon('error')),
-
-
-//  <Spin style={{ display: "block", margin: "0 auto" }} size="large" />
-// ) : ((openNotificationWithIcon('error')),
-// Spin style={{ display: "block", margin: "0 auto" }} size="large" />
