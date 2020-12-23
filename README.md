@@ -28,4 +28,4 @@ http://localhost:3000
 You can also check the demo on [GitHub Jobs](https://react-github-jobs-101.netlify.app)
 
 ## ScreenShots
-![Time Tracking](https://github.com/killcodeX/spaceXhistory/blob/master/public/spaceship.png)
+![Time Tracking](https://github.com/killcodeX/githubJobs/blob/master/public/screen.png)
